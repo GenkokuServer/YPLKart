@@ -1,13 +1,11 @@
 package com.github.erozabesu.yplkart.object;
 
 import org.bukkit.ChatColor;
-import org.bukkit.Material;
-import org.bukkit.SkullType;
 import org.bukkit.Sound;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.SkullMeta;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import com.github.erozabesu.yplkart.ConfigManager;
 import com.github.erozabesu.yplkart.data.ConfigEnum;
@@ -148,15 +146,12 @@ public class Character {
 
     /** @return メニュー用アイテム */
     public ItemStack getMenuItem() {
-        ItemStack item = new ItemStack(Material.SKULL_ITEM, 1, (short) SkullType.PLAYER.ordinal());
+        ItemStack item = CommonUtil.createPlayerSkullByName(this.getMenuHeadBlockPlayerName());
+        ItemMeta meta = item.getItemMeta();
 
-        SkullMeta meta = (SkullMeta) item.getItemMeta();
-
-        meta.setOwner(getMenuHeadBlockPlayerName());
         meta.setDisplayName(ChatColor.GREEN + getCharacterName());
         meta.setLore(MessageEnum.replaceLine(
                 MessageEnum.replaceChatColor(getParameter())));
-
         item.setItemMeta(meta);
 
         return item;

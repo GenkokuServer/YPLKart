@@ -3,6 +3,8 @@ package com.github.erozabesu.yplkart;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.bukkit.plugin.java.JavaPlugin;
+
 import com.github.erozabesu.yplkart.data.ConfigEnum;
 import com.github.erozabesu.yplutillibrary.config.LoaderAbstract;
 import com.github.erozabesu.yplutillibrary.config.RawTextLoader;
@@ -42,31 +44,33 @@ public class LanguageManager {
     public static void reloadAllFile() {
         saveAllFile();
 
-        CONFIG_COMMENT = new YamlLoader("config_comment.yml", ConfigEnum.language);
+        JavaPlugin plugin = YPLKart.getInstance();
+
+        CONFIG_COMMENT = new YamlLoader(plugin, "config_comment.yml", ConfigEnum.language);
         configList.add(CONFIG_COMMENT);
 
-        CONFIG_HEADER = new RawTextLoader("config_header.yml", ConfigEnum.language);
+        CONFIG_HEADER = new RawTextLoader(plugin, "config_header.yml", ConfigEnum.language);
         configList.add(CONFIG_HEADER);
 
-        MESSAGE = new YamlLoader("message.yml", ConfigEnum.language);
+        MESSAGE = new YamlLoader(plugin, "message.yml", ConfigEnum.language);
         configList.add(MESSAGE);
 
-        MESSAGE_HEADER = new RawTextLoader("message_header.yml", ConfigEnum.language);
+        MESSAGE_HEADER = new RawTextLoader(plugin, "message_header.yml", ConfigEnum.language);
         configList.add(MESSAGE_HEADER);
 
-        PERMISSION_COMMENT = new YamlLoader("permission_comment.yml", ConfigEnum.language);
+        PERMISSION_COMMENT = new YamlLoader(plugin, "permission_comment.yml", ConfigEnum.language);
         configList.add(PERMISSION_COMMENT);
 
-        PERMISSION_HEADER = new RawTextLoader("permission_header.yml", ConfigEnum.language);
+        PERMISSION_HEADER = new RawTextLoader(plugin, "permission_header.yml", ConfigEnum.language);
         configList.add(PERMISSION_HEADER);
 
-        CHARACTER_HEADER = new RawTextLoader("character_header.yml", ConfigEnum.language);
+        CHARACTER_HEADER = new RawTextLoader(plugin, "character_header.yml", ConfigEnum.language);
         configList.add(CHARACTER_HEADER);
 
-        ITEM_HEADER = new RawTextLoader("item_header.yml", ConfigEnum.language);
+        ITEM_HEADER = new RawTextLoader(plugin, "item_header.yml", ConfigEnum.language);
         configList.add(ITEM_HEADER);
 
-        KART_HEADER = new RawTextLoader("kart_header.yml", ConfigEnum.language);
+        KART_HEADER = new RawTextLoader(plugin, "kart_header.yml", ConfigEnum.language);
         configList.add(KART_HEADER);
 
         incertAllComments();

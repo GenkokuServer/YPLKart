@@ -17,7 +17,7 @@ import com.github.erozabesu.yplkart.YPLKart;
 import com.github.erozabesu.yplkart.enumdata.RaceType;
 import com.github.erozabesu.yplkart.enumdata.TagType;
 import com.github.erozabesu.yplkart.object.MessageParts;
-import com.github.erozabesu.yplutillibrary.util.CommentableYamlConfiguration;
+import com.github.erozabesu.yplutillibrary.config.CommentableYamlConfiguration;
 
 /**
  * プラグインから出力されるテキストメッセージを格納するクラス
@@ -336,7 +336,7 @@ public enum MessageEnum {
         message = message.replace("<gray>", ChatColor.GRAY.toString());
         message = message.replace("<darkgray>", ChatColor.DARK_GRAY.toString());
         message = message.replace("<red>", ChatColor.RED.toString());
-        message = message.replace("<darkRed>", ChatColor.DARK_RED.toString());
+        message = message.replace("<darkred>", ChatColor.DARK_RED.toString());
         message = message.replace("<green>", ChatColor.GREEN.toString());
         message = message.replace("<darkgreen>", ChatColor.DARK_GREEN.toString());
         message = message.replace("<blue>", ChatColor.BLUE.toString());

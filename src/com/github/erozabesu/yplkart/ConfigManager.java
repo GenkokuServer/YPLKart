@@ -3,6 +3,8 @@ package com.github.erozabesu.yplkart;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.bukkit.plugin.java.JavaPlugin;
+
 import com.github.erozabesu.yplutillibrary.config.LoaderAbstract;
 import com.github.erozabesu.yplutillibrary.config.YamlLoader;
 
@@ -43,25 +45,27 @@ public class ConfigManager {
     public static void reloadAllFile() {
         saveAllFile();
 
-        CONFIG = new YamlLoader("config.yml");
+        JavaPlugin plugin = YPLKart.getInstance();
+
+        CONFIG = new YamlLoader(plugin, "config.yml");
         configList.add(CONFIG);
 
-        PERMISSION = new YamlLoader("permission.yml");
+        PERMISSION = new YamlLoader(plugin, "permission.yml");
         configList.add(PERMISSION);
 
-        ITEM = new YamlLoader("item.yml");
+        ITEM = new YamlLoader(plugin, "item.yml");
         configList.add(ITEM);
 
-        CHARACTER = new YamlLoader("character.yml");
+        CHARACTER = new YamlLoader(plugin, "character.yml");
         configList.add(CHARACTER);
 
-        KART = new YamlLoader("kart.yml");
+        KART = new YamlLoader(plugin, "kart.yml");
         configList.add(KART);
 
-        RACEDATA = new YamlLoader("racedata.yml");
+        RACEDATA = new YamlLoader(plugin, "racedata.yml");
         configList.add(RACEDATA);
 
-        DISPLAY = new YamlLoader("displaykart.yml");
+        DISPLAY = new YamlLoader(plugin, "displaykart.yml");
         configList.add(DISPLAY);
     }
 }

@@ -5,8 +5,8 @@ import org.bukkit.Location;
 import org.bukkit.World;
 
 import com.github.erozabesu.yplkart.ConfigManager;
+import com.github.erozabesu.yplutillibrary.config.CommentableYamlConfiguration;
 import com.github.erozabesu.yplutillibrary.config.YamlLoader;
-import com.github.erozabesu.yplutillibrary.util.CommentableYamlConfiguration;
 
 public class DisplayKart {
 

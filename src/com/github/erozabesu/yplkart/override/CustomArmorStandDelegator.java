@@ -798,8 +798,8 @@ public class CustomArmorStandDelegator extends ReflectionUtil {
         //データ上手に持っているアイテムは書き換わっているが、見た目の更新は何故かされないため
         //明示的にパケットを送信する
         int entityId = (Integer) invoke(Methods.nmsEntity_getId, kartEntity);
-        Object craftItemStack = invoke(Methods.static_craftItemStack_convertBukkitItem_To_NmsItem, null, itemStack);
-        PacketUtil.sendEntityEquipmentPacket(null, entityId, 0, craftItemStack);
+        Object nmsItemStack = invoke(Methods.static_craftItemStack_createNmsItemByBukkitItem, null, itemStack);
+        PacketUtil.sendEntityEquipmentPacket(null, entityId, 0, nmsItemStack);
 
         //腕の角度を調整
         float pitch = (Float) getFieldValue(Fields.nmsEntity_pitch, kartEntity);

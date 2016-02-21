@@ -21,7 +21,6 @@ import com.github.erozabesu.yplkart.listener.ItemListener;
 import com.github.erozabesu.yplkart.listener.KartListener;
 import com.github.erozabesu.yplkart.listener.NettyListener;
 import com.github.erozabesu.yplkart.listener.RaceListener;
-import com.github.erozabesu.yplutillibrary.YPLUtilityLibrary;
 
 public class YPLKart extends JavaPlugin {
     private static YPLKart PLUGIN;
@@ -37,11 +36,7 @@ public class YPLKart extends JavaPlugin {
         PLUGIN_NAME = this.getDescription().getName();
         PLUGIN_VERSION = this.getDescription().getVersion();
 
-        // ユーティリティライブラリにインスタンスを渡す
-        YPLUtilityLibrary.registerLibrary(this);
-
-        KaCommand executor = new KaCommand();
-        getCommand("ka").setExecutor(executor);
+        getCommand("ka").setExecutor(new KaCommand());
 
         reloadAllConfig();
 

@@ -37,10 +37,7 @@ public enum ConfigEnum {
     ITEM$DETECT_CHECKPOINT_RADIUS$TIER2,
     ITEM$DETECT_CHECKPOINT_RADIUS$TIER3;
 
-    /*
-     * コンフィグ値の型を保証するため変数として別途宣言する。
-     * 他クラスからインスタンスとして参照するためプリミティブ型は利用しない。
-     */
+    // コンフィグ値の型を保証するため変数として別途宣言する。
     public static String language;
 
     public static Boolean enable_this_plugin;
